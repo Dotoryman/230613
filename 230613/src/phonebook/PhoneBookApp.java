@@ -22,10 +22,22 @@ public class PhoneBookApp {
 				if (menu < INIT_MENU.INPUT || menu > INIT_MENU.EXIT) {
 					throw new MenuChoiceException(menu);
 				}
-				switch(menu) {
+				switch (menu) {
 				case INIT_MENU.INPUT:
 					app.inputData();
 					break;
+					
+				case INIT_MENU.SEARCH:
+					app.searchData();
+					break;
+					
+				case INIT_MENU.DELETE:
+					app.deleteData();
+					break;
+
+				case INIT_MENU.EXIT:
+					app.storeToFile();
+					return;
 				}
 			} catch (MenuChoiceException e) {
 				e.showWrongChoice();

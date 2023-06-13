@@ -1,10 +1,13 @@
 package phonebook;
 
+import lombok.Data;
+
+@Data
 public class PhoneInfo {
 	private String name;
 	private String phoneNumber;
 	
-	public PhoneInfo(String name, String PhoneNumber) {
+	public PhoneInfo(String name, String phoneNumber) {
 		this.name = name;
 		this.phoneNumber = phoneNumber;
 	}
