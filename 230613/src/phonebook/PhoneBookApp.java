@@ -10,6 +10,26 @@ package phonebook;
 //추가 조회 삭제
 public class PhoneBookApp {
 	public static void main(String[] args) {
-		
+		PhoneBookManager app = PhoneBookManager.getInstance();
+		int menu;
+
+		while (true) {
+			try {
+				MenuViewer.showMenu();
+				menu = MenuViewer.scn.nextInt();
+				MenuViewer.scn.nextLine();
+
+				if (menu < INIT_MENU.INPUT || menu > INIT_MENU.EXIT) {
+					throw new MenuChoiceException(menu);
+				}
+				switch(menu) {
+				case INIT_MENU.INPUT:
+					app.inputData();
+					break;
+				}
+			} catch (MenuChoiceException e) {
+				e.showWrongChoice();
+			}
+		}
 	}
 }
