@@ -1,5 +1,7 @@
 package phonebook;
 
+import java.util.Scanner;
+
 //PhoneInfo: 이름, 연락처
 //PhoneCompanyInfo : 회사 포함
 //PhoneUnivInfo : 학교포함
@@ -12,7 +14,22 @@ public class PhoneBookApp {
 	public static void main(String[] args) {
 		PhoneBookManager app = PhoneBookManager.getInstance();
 		int menu;
+		Scanner scn = new Scanner(System.in);
+		UserCheck check = new UserCheck();
+		boolean run = true;
+		//id, pass : id와 passwd를 입력하세요
+		// UserCheck.loginCheck(id,pw);
+		// check.loginCheck(id,pw);
+		//프로그램 시작
+		while(run) {
+			System.out.println("관리자 계정을 입력하세요");
+			String id = MenuViewer.scn.nextLine();
+			System.out.println("비밀번호를 입력하세요");
+			String pw = MenuViewer.scn.nextLine();
+			run = check.loginCheck(id, pw);
 
+		}
+		
 		while (true) {
 			try {
 				MenuViewer.showMenu();
