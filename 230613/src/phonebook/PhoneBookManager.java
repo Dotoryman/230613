@@ -82,7 +82,7 @@ public class PhoneBookManager {
 		String phone = MenuViewer.scn.nextLine();
 		System.out.println("전공을 입력하세요");
 		String major = MenuViewer.scn.nextLine();
-		System.out.println("학년을 입력하세요");
+		System.out.println("학년을 입력하세요 (숫자만 입력하세요)");
 		int year = MenuViewer.scn.nextInt();
 		MenuViewer.scn.nextLine();
 		return new PhoneUnivInfo(name, phone, major, year);
